@@ -1,11 +1,11 @@
 {
-  "name": "my_web",
+  "name": "ComingSoon",
   "version": "1.0.0",
-  "description": "assignment_3",
-  "main": "myweb.js",
+  "description": "ComingSoon",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node myweb.js"
+    "start": "node app.js"
   },
   "author": "Sam Wright & Rong Hui",
   "license": "ISC",
