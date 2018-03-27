@@ -1,2 +1,2 @@
 # INFO30005
-Workshop tasks etc
+Workshop tasks and assignment work
