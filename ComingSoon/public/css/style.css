@@ -1,0 +1,113 @@
+body {
+    /*background-color: lightblue;*/
+    background: url(bgimage.png);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*h1 {
+    color: white;
+    margin-left: 20px;
+    float: right;
+    margin-right: 5%;
+    font-size: 64px;
+}*/
+
+#countDownTimer{
+    color: white;
+    font-size: 64px;
+    margin-left: 5%;
+    /*bottom: 0%;
+    position: fixed;*/
+}
+
+#content{
+    color: white;
+    margin-left: 20px;
+    float: right;
+    margin-right: 5%;
+    font-size: 64px;
+}
+
+#content h1{
+    font-size: 64px;
+    font-weight: bold;
+}
+
+#content p{
+    margin-left: 5%;
+}
+
+#moreInfo{
+    color: white;
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+/*#groupName{
+    font-size: 64px;
+    font-weight: bold;
+}*/
+
+/*
+#moreInfo{
+    padding-left: 20px;
+    font-size: 48px;
+}
+
+#comingSoon{
+    margin-left: 5%;
+}
+*/
+a {
+  color: red;
+  font-family: helvetica;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: purple;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/*#content{
+    color: white;
+    margin-left: 60%;
+    margin-right: 10%;
+    margin-top: 50px;
+    padding-top: 50px;
+    float: right;
+    font-size: 48px;
+    position: right;
+}*/
