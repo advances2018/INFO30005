@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node myweb.js"
   },
-  "author": "rong hui",
+  "author": "Sam Wright & Rong Hui",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.8",
