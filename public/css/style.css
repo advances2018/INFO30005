@@ -22,6 +22,18 @@ body {
     position: fixed;*/
 }
 
+#searchResult{
+    background-color: grey;
+    text-align: center;
+    float: center;
+    margin-top: 20%;
+    margin-left: 20%;
+    color: white;
+    font-size: 64px;
+    width: 40%;
+
+}
+
 #content{
     color: white;
     margin-left: 20px;
@@ -133,9 +145,36 @@ li a:hover:not(.active) {
   color: black;
 }
 
-.topnav a.login {
-  color: white;
+* {box-sizing: border-box;}
+
+.topnav .search-container {
   float: right;
 }
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin: 0px 0;
+  margin-left: 6px;
+  width: 40px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
 
 /* Code for the navigation bar styling END */

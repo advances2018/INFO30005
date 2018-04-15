@@ -1,25 +1,23 @@
-<!-- views/login.ejs -->
+<!-- views/search.ejs -->
 
 <!DOCTYPE html>
 <html>
     <head>
          <title>Coming Soon!</title>
          <link href="/css/style.css" rel="stylesheet" type="text/css">
-         <link href="/css/loginButton.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
             <% include ../partials/header.ejs %>
         </header>
 
-        <div id = "loginBox">
-
-
-        <div>
-
         <div id = "content">
-            <h1>Login Page</h1>
-            <p> Coming Soon!</>
+            <h1>Search Page</h1>
+            <p>Coming Soon!</p>
         </div>
+        <p id = "searchResult">
+               Search term =  <%= myVar %>
+               <%= searchResults %>
+        </p>
     </body>
 </html>

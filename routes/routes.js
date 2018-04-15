@@ -17,5 +17,8 @@ router.get('/db', controller.Alldb);
 
 router.get('/db/:index', controller.Indexdb);
 
+router.get('/search', controller.searchPage);
+
+router.get('/register', controller.registerPage);
 
 module.exports = router;
