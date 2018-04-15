@@ -1,6 +1,6 @@
 body {
     /*background-color: lightblue;*/
-    background: url(bgimage.png);
+    background: url(bgimage.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -111,3 +111,31 @@ li a:hover:not(.active) {
     font-size: 48px;
     position: right;
 }*/
+
+/* Code for the navigation bar styling START */
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.login {
+  color: white;
+  float: right;
+}
+
+/* Code for the navigation bar styling END */
