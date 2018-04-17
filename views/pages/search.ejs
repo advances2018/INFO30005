@@ -5,28 +5,16 @@
     <head>
          <title>Coming Soon!</title>
          <link href="/css/style.css" rel="stylesheet" type="text/css">
+         <link href="/css/searchResults.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
             <% include ../partials/header.ejs %>
         </header>
 
-        <div id = "content">
-            <h1>Search Page</h1>
-            <p>Coming Soon!</p>
-        </div>
-        <p id = "searchResult">
+        <div id = "searchResult">
                Search term =  <%= myVar %>
-               <%= searchResults %>
-               <table style="width:100%">
-               <tbody>
-                <tr><td>Title 1</td><td>xxx</td><td>xxxx</td></tr>
-                <tr><td>Title 2</td><td>xxx</td><td>xxx</td></tr>
-                <tr><td>Title 3</td><td>xxx</td><td>xxx</td></tr>
-                <tr><td>Title 4</td><td>xxx</td><td>xxx</td></tr>
-                <tr><td>Title 5</td><td>xxx</td><td>xxx</td></tr>
-                </tbody>
-                </table>
-        </p>
+               <%- searchResults %>
+        </div>
     </body>
 </html>
