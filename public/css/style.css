@@ -2,9 +2,18 @@ body {
     /*background-color: lightblue;*/
     font-family: Helvetica;
     background: url(bgimage.jpg) top left no-repeat , url(bgrepeat.jpg) bottom repeat;
+
     /*background-position: top;
     background-size: cover;
     background-repeat: no-repeat;*/
+}
+/*black overlay*/
+.darken {
+    background-image:
+            linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)
+            );
 }
 
 /*h1 {
@@ -176,6 +185,9 @@ li a:hover:not(.active) {
 
 /*news page*/
 
+.newspage{
+    color: #f1f1f1;
+}
 .newsheader{
     text-align: center;
     font-size: 3.9em;
@@ -185,15 +197,7 @@ li a:hover:not(.active) {
     padding-left: 30px;
 }
 
-.bulletpoints{
-    padding-left: 40px;
-}
-
-.datename{
-    padding-left: 60px;
-}
-
-.parapadding{
+.padpage{
     padding-left: 60px;
 }
 
