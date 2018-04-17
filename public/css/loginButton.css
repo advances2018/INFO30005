@@ -47,6 +47,15 @@ button:hover {
 
 span.psw {
     float: right;
+    color: black;
+    padding-top: 16px;
+
+}
+
+
+span.reg {
+    float: right;
+    color: black;
     padding-top: 16px;
 }
 
