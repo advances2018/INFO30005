@@ -29,7 +29,7 @@ module.exports.registerPage = function(req, res){
 };
 
 module.exports.forgotPage = function(req, res){
-    res.render('partials/forgot');
+    res.render('page/forgot');
 };
 
 module.exports.sayBye = function(req, res){
