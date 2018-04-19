@@ -1,0 +1,259 @@
+<!-- views/dummypage.ejs -->
+
+<!-- original bootstrap template from W3Layouts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CommuniTeach </title>
+
+    <!-- import css files -->
+    <% include ../partials/importCSS.ejs %>
+    <!-- import css files -->
+
+    <style>
+        .section{
+            border-style: solid;
+            border-color: #d5d5d5;
+            padding: 2%;
+        }
+
+        .fonthead{
+            font-size: 40px;
+            color: #d5d5d5;
+        }
+
+    </style>>
+
+</head>
+<body>
+
+<!-- banner -->
+<div id="home" class="w3ls-banner">
+
+    <!-- Import header & Navigation bar -->
+    <% include ../partials/header.ejs %>
+    <!-- Import header & Navigation bar -->
+
+    <!-- banner-Slider -->
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides callbacks callbacks1" id="slider4">
+                <li>
+                    <div class="w3layouts-banner-top">
+                        <div class="banner-dott">
+                            <div class="container">
+                                <div data-aos="fade-left" class="agileits-banner-info">
+
+                                    <div class="container-fluid">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-center" style = "font-size: 80px">
+                                                    Dummy Results
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h3 style = "text-align: center">
+                                                    Example content
+                                                </h3>
+                                                <hr>
+                                                <!--Place holder for content-->
+                                                <img class="d-block w-100" alt="Placeholder" src="https://studybreaks.com/wp-content/uploads/2017/08/books.jpg">
+                                                <hr>
+                                                <h2 class = "fonthead">
+                                                    Description
+                                                </h2>
+                                                <br>
+                                                <div class = "section">
+                                                <p>
+                                                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                                </p>
+                                                </div>
+                                                <br>
+                                                <div class="btn-group" role="group">
+
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 1
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 2
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 3
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 4
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 5
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 6
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 7
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button">
+                                                        Link 8
+                                                    </button>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div style = "padding-left: 20px; padding-right: 20px">
+                                                    <h3>
+                                                        Comment Section
+                                                    </h3>
+                                                    <hr>
+                                                    <div class = "section">
+
+                                                    <h2 class = "fonthead">
+                                                        Comment 1
+                                                    </h2>
+                                                    <hr>
+                                                    <p>
+                                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                                    </p>
+                                                        <h2 class = "fonthead">
+                                                            Comment 2
+                                                        </h2>
+                                                    <hr>
+                                                    <p>
+                                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                                                    </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div class="clearfix"> </div>
+</div>
+<!-- banner-Slider -->
+
+
+</div>
+<!-- //banner -->
+
+
+<% include ../partials/signIn.ejs %>
+
+<% include ../partials/register.ejs %>
+
+<% include ../partials/uploadForm.ejs %>
+
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!-- /nav -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/demo1.js"></script>
+<!-- //nav -->
+<!-- cart-js -->
+<!--search-bar-->
+<script src="js/search.js"></script>
+<!--//search-bar-->
+
+
+
+
+<!-- /Responsive slides js -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager:true,
+            nav:false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager:false,
+            nav:true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<!-- Responsive slides js -->
+
+<script src="js/SmoothScroll.min.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+
+<!-- move to top-js-files -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- //move to top-js-files -->
+
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>
