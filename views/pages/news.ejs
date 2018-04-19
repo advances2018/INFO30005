@@ -1,0 +1,166 @@
+<!-- views/about.ejs -->
+
+<!-- original bootstrap template from W3Layouts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CommuniTeach </title>
+
+    <!-- import css files -->
+    <% include ../partials/importCSS.ejs %>
+    <!-- import css files -->
+
+</head>
+<body>
+
+<!-- banner -->
+<div id="home" class="w3ls-banner">
+
+    <!-- Import header & Navigation bar -->
+    <% include ../partials/header.ejs %>
+    <!-- Import header & Navigation bar -->
+
+    <!-- banner-Slider -->
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides callbacks callbacks1" id="slider4">
+                <li>
+                    <div class="w3layouts-banner-top">
+                        <div class="banner-dott">
+                            <div class="container">
+                                <div data-aos="fade-left" class="agileits-banner-info">
+                                    <!-- about bottom -->
+                                    <h3>News</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ligula at metus bibendum, nec venenatis est volutpat. Morbi dictum nunc eget arcu euismod suscipit. Vivamus sit amet lectus mi. Fusce fringilla accumsan tellus. Nunc auctor urna a erat interdum mollis. Cras vel neque mauris. Vivamus venenatis dui vel ligula lacinia, vel bibendum orci rutrum. Aenean fermentum arcu in turpis finibus volutpat. Nunc egestas, lacus et tincidunt dictum, arcu sem ultrices orci, at scelerisque risus dui quis mi. Aenean posuere porta finibus. Quisque euismod, erat venenatis accumsan porttitor, nulla arcu efficitur nunc, tempus ultricies eros ligula id lacus. Fusce aliquet felis vitae mollis ullamcorper. Quisque laoreet odio tempor eros dapibus commodo. Nam eu est dignissim, fermentum neque quis, fringilla arcu. Maecenas ullamcorper nisi magna, non luctus dui ullamcorper sed.</p>
+                                    <p>Cras ipsum justo, malesuada posuere hendrerit eget, blandit ac quam. Praesent orci lorem, semper quis arcu tempor, tempor tristique est. Duis luctus aliquet purus, eu placerat dui scelerisque ac. Pellentesque ullamcorper nisl vel est gravida, eget porttitor nisl sodales. Phasellus ut metus consequat, fringilla mi ultricies, pulvinar lorem. Nulla blandit nunc nec ornare mattis. Aenean in lacinia arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse ut arcu fringilla magna hendrerit molestie ac at lorem. Sed tincidunt augue finibus congue faucibus. Vestibulum suscipit placerat mauris sed convallis. Duis aliquet elit et sapien mattis venenatis. Cras sit amet cursus orci. Curabitur sodales euismod erat non aliquet. Pellentesque risus nisl, hendrerit nec massa vel, mollis tincidunt nunc. </p>
+                                    <!-- //about bottom -->
+
+                                    <h3>Upcoming</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ligula at metus bibendum, nec venenatis est volutpat. Morbi dictum nunc eget arcu euismod suscipit. Vivamus sit amet lectus mi. Fusce fringilla accumsan tellus. Nunc auctor urna a erat interdum mollis. Cras vel neque mauris. Vivamus venenatis dui vel ligula lacinia, vel bibendum orci rutrum. Aenean fermentum arcu in turpis finibus volutpat. Nunc egestas, lacus et tincidunt dictum, arcu sem ultrices orci, at scelerisque risus dui quis mi. Aenean posuere porta finibus. Quisque euismod, erat venenatis accumsan porttitor, nulla arcu efficitur nunc, tempus ultricies eros ligula id lacus. Fusce aliquet felis vitae mollis ullamcorper. Quisque laoreet odio tempor eros dapibus commodo. Nam eu est dignissim, fermentum neque quis, fringilla arcu. Maecenas ullamcorper nisi magna, non luctus dui ullamcorper sed.</p>
+                                    <p>Cras ipsum justo, malesuada posuere hendrerit eget, blandit ac quam. Praesent orci lorem, semper quis arcu tempor, tempor tristique est. Duis luctus aliquet purus, eu placerat dui scelerisque ac. Pellentesque ullamcorper nisl vel est gravida, eget porttitor nisl sodales. Phasellus ut metus consequat, fringilla mi ultricies, pulvinar lorem. Nulla blandit nunc nec ornare mattis. Aenean in lacinia arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse ut arcu fringilla magna hendrerit molestie ac at lorem. Sed tincidunt augue finibus congue faucibus. Vestibulum suscipit placerat mauris sed convallis. Duis aliquet elit et sapien mattis venenatis. Cras sit amet cursus orci. Curabitur sodales euismod erat non aliquet. Pellentesque risus nisl, hendrerit nec massa vel, mollis tincidunt nunc. </p>
+                                    <!-- //about bottom -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+    <div class="clearfix"> </div>
+</div>
+<!-- banner-Slider -->
+
+
+</div>
+<!-- //banner -->
+
+
+<% include ../partials/signIn.ejs %>
+
+<% include ../partials/register.ejs %>
+
+<% include ../partials/uploadForm.ejs %>
+
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!-- /nav -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/demo1.js"></script>
+<!-- //nav -->
+<!-- cart-js -->
+<!--search-bar-->
+<script src="js/search.js"></script>
+<!--//search-bar-->
+
+
+
+
+<!-- /Responsive slides js -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager:true,
+            nav:false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager:false,
+            nav:true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<!-- Responsive slides js -->
+
+<script src="js/SmoothScroll.min.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+
+<!-- move to top-js-files -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- //move to top-js-files -->
+
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>
