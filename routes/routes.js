@@ -23,4 +23,8 @@ router.get('/register', controller.registerPage);
 
 router.get('/forgot', controller.forgotPage);
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 3296f663382537025fcbfacb1049f1c3772432b1
