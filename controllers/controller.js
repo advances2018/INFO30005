@@ -56,7 +56,7 @@ function generateSearchTable(searchTerm){
     html += '<tr><th>Activity</th><th>User</td><th>Rating</th></tr>';
     var i;
     for (i = 0; i < 20; i++) {
-        html += '<tr><td>Title ' + i + '</td><td>' + searchTerm + " test " + i + '</td><td>xxx</td></tr>';
+        html += '<tr><td><a href="dummypage">Example Result</a></td><td>' + searchTerm + " test " + i + '</td><td>xxx</td></tr>';
     }
 
     html += '</tbody></table>';
