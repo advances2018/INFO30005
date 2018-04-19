@@ -1,19 +1,37 @@
 <!-- views/partials/register.ejs -->
 
 <!-- popup for sign up form -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="modal video-modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div id="small-dialog2" class="mfp-hide book-form">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h3>Register form</h3>
-                    <form action="#" method="post">
-                        <input type="text" name="Name" placeholder="Your Name" required=""/>
-                        <input type="email" name="Email" class="email" placeholder="Email" required=""/>
-                        <input type="password" name="Password" class="password" placeholder="Password" required=""/>    
-                        <input type="password" name="Password" class="password" placeholder="Confirm Password" required=""/>
+                    <form action="/">
+                        <input type="text" name="first_name" placeholder="First Name" required=""/>
+                        <input type="text" name="last_name" placeholder="Last Name" required=""/>
+                        <input type="email" name="email" class="email" placeholder="Email" required=""/>
+                        <input type="password" name="password" id="password" class="password" placeholder="Password" onkeyup='check();'  required=""/>    
+                        <input type="password" name="confirm_Password" id="confirm_password" class="password" placeholder="Confirm Password" onkeyup='check();'  required=""/>
                         <input type="submit" value="Register Now">
+                    
+
+
                     </form>
+                    <script>
+                    var check = function() {
+                      if (document.getElementById('password').value ==
+                        document.getElementById('confirm_password').value) {
+                        document.getElementById('message').style.color = 'green';
+                        document.getElementById('message').innerHTML = 'matching';
+                      } else {
+                        document.getElementById('message').style.color = 'red';
+                        document.getElementById('message').innerHTML = 'not matching';
+                      }
+                    }
+                    </script>
+
             </div>
         </div>
     </div>
