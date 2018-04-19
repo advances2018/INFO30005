@@ -1,0 +1,54 @@
+<!-- views/partials/uploadForm.ejs -->
+
+<!-- popup for upload up form -->
+<div class="modal video-modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="small-dialog2" class="mfp-hide book-form">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>Upload Files</h3>
+                    <form action="/" >
+                        <div class="select-block1">
+                            <input type="text" name="title" placeholder="Title of Content" required=""/>
+                            <input type="text" name="description" placeholder="Description" required=""/>
+                            <input class="date" id="datepicker" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required="" >
+                        </div>
+                        
+                        <div class="select-block1">
+                            <select required="">
+                                <option value="">Education Level*</option>
+                                <option value="">Primary</option>
+                                <option value="">Secondary</option>
+                                <option value="">College</option>
+                                <option value="">University</option>
+                                <option value="">Post grad</option>
+                            </select>
+                        </div>
+                        
+                        <div class="select-block1">
+                            <h4>Please seperate tags with comma</h4>
+                            <input type="text" id="tags" value="physics,university,college etc...">
+                        </div>
+
+
+                        <div class="select-block1">
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" required="" />
+                        </div>
+
+                        <input type="submit" value="Submit">
+
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+    var myArray = new Array();
+    function storeTags() {
+        myArray.push(document.getElementById("tags").value);
+        document.getElementById("addedTags").innerHTML = myArray;
+
+    }
+
+    </script>
+<!-- //popup for upload up form -->
