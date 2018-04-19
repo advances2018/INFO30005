@@ -1,20 +1,60 @@
 <!-- views/search.ejs -->
 
+<!-- original bootstrap template from W3Layouts -->
 <!DOCTYPE html>
-<html>
-    <head>
-         <title>Coming Soon!</title>
-         <link href="/css/style.css" rel="stylesheet" type="text/css">
-         <link href="/css/searchResults.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <header>
-            <% include ../partials/header.ejs %>
-        </header>
+<html lang="en">
+<head>
+<title>CommuniTeach</title>
+        
+    <!-- import css files -->
+    <% include ../partials/importCSS.ejs %>
+    <!-- import css files -->
+    <style>
 
-        <div id = "searchResult">
-               Search term =  <%= myVar %>
-               <%- searchResults %>
-        </div>
-    </body>
+
+    .searchResults{
+
+        background-color: #d3d3d3;
+        border-radius: 10px;
+        font-size: 15px;
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+
+
+    }
+
+    </style>
+
+</head>
+<body>
+
+<!-- banner -->
+
+
+    <!-- Import header & Navigation bar -->
+    <% include ../partials/header.ejs %>
+    <!-- Import header & Navigation bar -->
+
+    <!-- banner-Slider -->
+
+
+
+        <div class="clearfix"> </div>
+
+    <!-- banner-Slider -->
+ 
+<!-- //banner --> 
+
+<% include ../partials/pageTemplate.ejs %>  
+                    <div class="banner-dott">
+                    <div class="clearfix"> </div>
+                    <div class="searchResults">
+                        <center><h1>Search term =  <%= myVar %></h1></center>
+
+                        <%- searchResults %>
+                    </div>
+                    </div>
+
+</body>
 </html>

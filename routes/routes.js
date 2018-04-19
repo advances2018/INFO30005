@@ -21,4 +21,6 @@ router.get('/search', controller.searchPage);
 
 router.get('/register', controller.registerPage);
 
+router.get('/forgot', controller.forgotPage);
+
 module.exports = router;

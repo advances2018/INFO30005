@@ -376,7 +376,8 @@ li.dropdown.act a.w3_icons_act {
 
 .cd-search {
 	position: absolute;
-	width: 100%;
+	width: 80%;
+    margin-left: 10%;
 	top: 12%;
 	left: 0;
 	z-index: 3;

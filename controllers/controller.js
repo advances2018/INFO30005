@@ -20,6 +20,10 @@ module.exports.newsPage = function(req, res){
     res.render('pages/news');
 };
 
+module.exports.forgotPage = function(req, res){
+    res.render('pages/forgot');
+};
+
 module.exports.registerPage = function(req, res){
     res.render('pages/register');
 };
@@ -39,10 +43,10 @@ module.exports.Indexdb = function(req, res){
 
 //function for generating the html for the results table
 function generateSearchTable(searchTerm){
-    var html = '<table class = "resultsTable" style="width:80%"><tbody>';
-    html += '<tr><td>Title 1</td><td>' + searchTerm + " test " + '0' + '</td><td class ="resultsTopRight">xxxx</td></tr>';
+    var html = '<table class = "table table-striped table-bordered table-hover" style="width:80%; margin-left: 10%"><tbody>';
+    html += '<tr><th>Activity</th><th>User</td><th>Rating</th></tr>';
     var i;
-    for (i = 1; i < 20; i++) { 
+    for (i = 0; i < 20; i++) { 
         html += '<tr><td>Title ' + i + '</td><td>' + searchTerm + " test " + i + '</td><td>xxx</td></tr>';
     }
 
