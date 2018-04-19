@@ -1,7 +1,7 @@
 const db = require('../models/db');
 
 module.exports.sayHi = function(req, res){
-	res.send("Hi!");
+    res.send("Hi!");
 };
 
 module.exports.indexPage = function(req, res){
@@ -33,24 +33,29 @@ module.exports.forgotPage = function(req, res){
 };
 
 module.exports.sayBye = function(req, res){
-	res.send("Bye!");
+    res.send("Bye!");
 };
 
 module.exports.Alldb = function(req, res){
-	res.send(db);
+    res.send(db);
+};
+
+module.exports.dummypage = function(req, res){
+    res.render('pages/dummypage');
 };
 
 module.exports.Indexdb = function(req, res){
     //res.send(req.params);
-	res.render('view', { view : db[req.params.index] });
-};
+    res.render('view', { view : db[req.params.index] });
+}
+
 
 //function for generating the html for the results table
 function generateSearchTable(searchTerm){
     var html = '<table class = "table table-striped table-bordered table-hover" style="width:80%; margin-left: 10%"><tbody>';
     html += '<tr><th>Activity</th><th>User</td><th>Rating</th></tr>';
     var i;
-    for (i = 0; i < 20; i++) { 
+    for (i = 0; i < 20; i++) {
         html += '<tr><td>Title ' + i + '</td><td>' + searchTerm + " test " + i + '</td><td>xxx</td></tr>';
     }
 
