@@ -24,6 +24,10 @@ module.exports.registerPage = function(req, res){
     res.render('pages/register');
 };
 
+module.exports.forgotPage = function(req, res){
+    res.render('partials/forgot');
+};
+
 module.exports.sayBye = function(req, res){
 	res.send("Bye!");
 };
