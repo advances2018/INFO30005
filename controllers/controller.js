@@ -149,36 +149,76 @@ module.exports.generateHtmlFile = function(req, res){
 
     var form = new multiparty.Form();
 
+    var title;
+
     form.parse(req, function(err, fields, files) {
-      var title = util.inspect(fields);
+      //var title = util.inspect(fields);
       var obj = JSON.stringify(util.inspect(fields));
 
 
-      var title = util.inspect(fields['title'][0]).replace(/'/g, '');
+      title = util.inspect(fields['title'][0]).replace(/'/g, '');
       var description = util.inspect(fields['description'][0]).replace(/'/g, '');
       var fileDetails = util.inspect(files['filetoupload'][0]['originalFilename']).replace(/'/g, '');
+      console.log(fileDetails);
       var htmlFileDet = 'activity' + activityNum + '.html';
       var uploaderName = req.user['username'];
+      //console.log(title);
 
-
-      insertDocuments(title, description, htmlFileDet, uploaderName);
+      /*insertDocuments(title, description, htmlFileDet, uploaderName);
       fs.writeFile(currentPath + '/public/activities/test/activity' + activityNum + '.html', buildHtml(title, description, '/activities/testFiles/' + fileDetails, uploaderName), function (err) {
       if (err) throw err;
       //console.log('New File!'); 
-    });
+      });*/
 
     });
 
-
+    //console.log(title);
 
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
+      var cloudinary = require('cloudinary');
+      /*cloudinary.cloud_name = 'dkyqddfoh';
+      cloudinary.api_key = '616718934327811';
+      cloudinary.api_secret = '45ivSzjhmCguGDef9OqVfhOwqE8';*/
+      //console.log(util.inspect(fields['title']).replace(/'/g, ''))
+      title = util.inspect(fields['title']).replace(/'/g, '');
+
+      cloudinary.config({ 
+      cloud_name: 'dkyqddfoh', 
+      api_key: '616718934327811', 
+      api_secret: '45ivSzjhmCguGDef9OqVfhOwqE8' 
+      });
+
       var oldpath = files.filetoupload.path;
-      var newpath = currentPath + '/public/activities/testFiles/' + files.filetoupload.name;
+      cloudinary.uploader.upload(oldpath, function(result) { 
+        cloudinaryUpload = result['url'] 
+        console.log(cloudinaryUpload)
+        description = util.inspect(fields['description']).replace(/'/g, '');
+        console.log(description);
+        title = util.inspect(fields['title']).replace(/'/g, '');
+        console.log(title);
+        uploaderName = req.user['username'];
+        console.log(uploaderName);
+        var htmlFileDet = 'activity' + activityNum + '.html';
+        insertDocuments(title, description, htmlFileDet , uploaderName);
+          fs.writeFile(currentPath + '/public/activities/test/activity' + activityNum + '.html', buildHtml(title, description, cloudinaryUpload, uploaderName), function (err) {
+          if (err) throw err;
+          //console.log('New File!'); 
+          });
+        });
+
+      /*var oldpath = files.filetoupload.path;
+      var cloudinaryUpload;
+      cloudinary.uploader.upload(oldpath, function(result, title) { 
+        cloudinaryUpload = result['url'] 
+        console.log(title);
+        });*/
+
+      /*var newpath = currentPath + '/public/activities/testFiles/' + files.filetoupload.name;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         console.log('File uploaded and moved!');
-      });
+      });*/
     });
 
     //should notify the user of successful upload
