@@ -6,12 +6,11 @@
         <div class="modal-content">
             <div id="small-dialog2" class="mfp-hide book-form">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3>Upload Files</h3>
-                    <form action="/" >
+                <h3>Create Activity</h3>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
                         <div class="select-block1">
                             <input type="text" name="title" placeholder="Title of Content" required=""/>
                             <input type="text" name="description" placeholder="Description" required=""/>
-                            <input class="date" id="datepicker" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required="" >
                         </div>
                         
                         <div class="select-block1">
@@ -32,7 +31,7 @@
 
 
                         <div class="select-block1">
-                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" required="" />
+                            <input type="file" id="fileselect" name="filetoupload" multiple="multiple" required="" />
                         </div>
 
                         <input type="submit" value="Submit">

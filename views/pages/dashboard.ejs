@@ -1,0 +1,159 @@
+<!-- views/dashboard.ejs -->
+
+<!-- original bootstrap template from W3Layouts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard </title>
+
+    <!-- import css files -->
+    <% include ../partials/importCSS.ejs %>
+    <!-- import css files -->
+
+</head>
+<body>
+
+<!-- banner -->
+<div id="home" class="w3ls-banner">
+
+    <!-- Import header & Navigation bar -->
+    <% include ../partials/header.ejs %>
+    <!-- Import header & Navigation bar -->
+
+    <!-- banner-Slider -->
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides callbacks callbacks1" id="slider4">
+                <li>
+                    <div class="w3layouts-banner-top">
+                        <div class="banner-dott">
+                            <div class="container">
+                                <div data-aos="fade-left" class="agileits-banner-info">
+                                    <!-- about bottom -->
+                                    <h3>This is the placeholder Dashboard page for</h3>
+                                    <h3>Username = <%= userNameIn %></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+    <div class="clearfix"> </div>
+</div>
+<!-- banner-Slider -->
+
+
+</div>
+<!-- //banner -->
+
+
+<% include ../partials/signIn.ejs %>
+
+<% include ../partials/register.ejs %>
+
+<% include ../partials/upload.ejs %>
+
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+
+<!-- /nav -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/demo1.js"></script>
+<!-- //nav -->
+<!-- cart-js -->
+<!--search-bar-->
+<script src="js/search.js"></script>
+<!--//search-bar-->
+
+
+
+
+<!-- /Responsive slides js -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager:true,
+            nav:false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager:false,
+            nav:true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<!-- Responsive slides js -->
+
+<script src="js/SmoothScroll.min.js"></script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+
+<!-- move to top-js-files -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- //move to top-js-files -->
+
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>

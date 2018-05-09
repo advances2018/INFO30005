@@ -23,6 +23,10 @@ router.get('/register', controller.registerPage);
 
 router.get('/forgot', controller.forgotPage);
 
-router.get('/dummypage', controller.dummypage);
+//router.get('/dummypage', controller.dummypage);
+
+//router.get('/generateHtmlFile', controller.generateHtmlFile);
+
+router.post('/upload', controller.generateHtmlFile);
 
 module.exports = router;

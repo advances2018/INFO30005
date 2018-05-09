@@ -50,9 +50,18 @@
                     <div class="banner-dott">
                     <div class="clearfix"> </div>
                     <div class="searchResults">
-                        <center><h1>Search term =  <%= myVar %></h1></center>
 
-                        <%- searchResults %>
+                        <% if(user){ %>
+                            <center><h1>Search term =  <%= myVar %></h1></center>
+                            <%- searchResults %>
+                        <% } else{ %>
+                          <center><h1>Login to see search results</h1></center>
+                        <% } %>
+
+
+                    <!--    <center><h1>Search term =  <%= myVar %></h1></center>
+
+                        <%- searchResults %>-->
                     </div>
                     </div>
 

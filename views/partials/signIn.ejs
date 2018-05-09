@@ -7,18 +7,16 @@
             <div id="small-dialog1" class="mfp-hide book-form">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h3>Sign In </h3>
-                    <form action="/" >
-                        <input type="email" name="Email" class="email" placeholder="Email" required=""/>
-                        <input type="password" name="Password" class="password" placeholder="Password" required=""/>    
-                        <ul>
-                        <li>
-                            <input type="checkbox" id="brand1" value="">
-                            <label for="brand1"><span></span>Remember me</label>
-                        </li>
-                        </ul>
-                        <a href="/forgot">Forgot Password?</a><br>
-                        <div class="clearfix"></div>
-                            <input type="submit" value="Get Started">
+                    <form method="post" action="/users/login">
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                      </div>
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
                     </form>
             </div>
         </div>

@@ -11,12 +11,23 @@
 
             <nav>
                 <ul>
-                    <li> <a href="/">Home</a> </li>
-                    <li> <a href="/about" >About Us</a> </li>
-                    <li> <a href="/news">News</a> </li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal2" class="scroll">Sign in</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal3" class="scroll">Register</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal4" class="scroll">Upload</a></li>
+                    <li> <a href="/" >Home</a> </li>
+                    <li> <a href="/about" ">About Us</a> </li>
+                    <li> <a href="/news" >News</a> </li>
+                    <!--<li><a href="#" data-toggle="modal" data-target="#myModal2" class="scroll">Sign in</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal3" class="scroll">Register</a></li>-->
+                    
+                    <% if(user){ %>
+                      <li role="presentation"><a href="/users/dashboard">Dashboard</a></li>
+                      <li role="presentation"><a href="/users/logout">Logout</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#myModal4" class="scroll">Create Activity</a></li>
+                    <% } else{ %>
+                      <!--<li role="presentation"><a href="/users/login">Login</a></li>
+                      <li role="presentation"><a href="/users/register">Register</a></li>-->
+                      <li><a href="#" data-toggle="modal" data-target="#myModal2" class="scroll">Sign in</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#myModal3" class="scroll">Register</a></li>
+                    <% } %>
+                    <!--<li><a href="#" data-toggle="modal" data-target="#myModal4" class="scroll">Create Activity</a></li>-->
                 </ul>
             </nav>
         </div>

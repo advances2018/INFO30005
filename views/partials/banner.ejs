@@ -14,8 +14,16 @@
                     <li> <a href="/" class="scroll">Home</a> </li>
                     <li> <a href="/about" class="scroll">About Us</a> </li>
                     <li> <a href="news" class="scroll">News</a> </li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal2" class="scroll">Sign in</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal3" class="scroll">Register</a></li>
+                    <!--<li><a href="#" data-toggle="modal" data-target="#myModal2" class="scroll">Sign in</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal3" class="scroll">Register</a></li>-->
+                    
+                    <% if(user){ %>
+                      <li role="presentation"><a href="/">Dashboard</a></li>
+                      <li role="presentation"><a href="/users/logout">Logout</a></li>
+                    <% } else{ %>
+                      <!--<li role="presentation"><a href="/users/login">Login</a></li>
+                      <li role="presentation"><a href="/users/register">Register</a></li>-->
+                    <% } %>
                     <li><a href="#" data-toggle="modal" data-target="#myModal4" class="scroll">Upload</a></li>
                 </ul>
             </nav>
