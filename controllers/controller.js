@@ -151,6 +151,8 @@ module.exports.generateHtmlFile = function(req, res){
 
     var title;
 
+
+    /*
     form.parse(req, function(err, fields, files) {
       //var title = util.inspect(fields);
       var obj = JSON.stringify(util.inspect(fields));
@@ -170,7 +172,7 @@ module.exports.generateHtmlFile = function(req, res){
       //console.log('New File!'); 
       });*/
 
-    });
+    //});
 
     //console.log(title);
 
