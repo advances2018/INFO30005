@@ -18,7 +18,8 @@ router.get('/login', function (req, res) {
 });
 
 router.get('/dashboard', function (req, res) {
-	res.render('pages/dashboard', { userNameIn : req.user['username']});
+	console.log(req);
+	res.render('pages/dashboard', { userNameIn : req.user['username'], nameIn : req.user['name'], emailIn : req.user['email']});
 });
 
 // Register User

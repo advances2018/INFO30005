@@ -57,11 +57,6 @@ function buildHtml(title, description, fileselect, uploaderName) {
   var body = '<h1>Hello World! retest</h1>';
   var currentPath = process.cwd();
 
-  // concatenate header string
-  // concatenate body string
-  //  var returnHtml = fs.readFileSync(currentPath + '/activities/test/dummypage.html', 'utf-8');
-  //  console.log(returnHtml);
-  //  return "test" + returnHtml;
 
     var fs = require('fs'); //Filesystem    
 
@@ -92,7 +87,7 @@ var findDocuments = function(db, callback) {
 
 }
 
-var insertDocuments = function(ins_title, ins_desc, htmlFileDet, uploaderName){
+var insertDocuments = function(ins_title, ins_desc, htmlFileDet, uploaderName, cloudinaryUpload){
     MongoClient.connect(url, function(err, client){
         if (err) throw err;
         var collection = client.db('info30005').collection('info30005');
@@ -108,7 +103,8 @@ var insertDocuments = function(ins_title, ins_desc, htmlFileDet, uploaderName){
           title: ins_title,
           desc: ins_desc,
           fileLink: htmlFileDet,
-          user: uploaderName
+          user: uploaderName,
+          imageLink: cloudinaryUpload
         })
 
 
@@ -151,38 +147,9 @@ module.exports.generateHtmlFile = function(req, res){
 
     var title;
 
-
-    /*
-    form.parse(req, function(err, fields, files) {
-      //var title = util.inspect(fields);
-      var obj = JSON.stringify(util.inspect(fields));
-
-
-      title = util.inspect(fields['title'][0]).replace(/'/g, '');
-      var description = util.inspect(fields['description'][0]).replace(/'/g, '');
-      var fileDetails = util.inspect(files['filetoupload'][0]['originalFilename']).replace(/'/g, '');
-      console.log(fileDetails);
-      var htmlFileDet = 'activity' + activityNum + '.html';
-      var uploaderName = req.user['username'];
-      //console.log(title);
-
-      /*insertDocuments(title, description, htmlFileDet, uploaderName);
-      fs.writeFile(currentPath + '/public/activities/test/activity' + activityNum + '.html', buildHtml(title, description, '/activities/testFiles/' + fileDetails, uploaderName), function (err) {
-      if (err) throw err;
-      //console.log('New File!'); 
-      });*/
-
-    //});
-
-    //console.log(title);
-
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
       var cloudinary = require('cloudinary');
-      /*cloudinary.cloud_name = 'dkyqddfoh';
-      cloudinary.api_key = '616718934327811';
-      cloudinary.api_secret = '45ivSzjhmCguGDef9OqVfhOwqE8';*/
-      //console.log(util.inspect(fields['title']).replace(/'/g, ''))
       title = util.inspect(fields['title']).replace(/'/g, '');
 
       cloudinary.config({ 
@@ -202,25 +169,13 @@ module.exports.generateHtmlFile = function(req, res){
         uploaderName = req.user['username'];
         console.log(uploaderName);
         var htmlFileDet = 'activity' + activityNum + '.html';
-        insertDocuments(title, description, htmlFileDet , uploaderName);
+        insertDocuments(title, description, htmlFileDet , uploaderName, cloudinaryUpload);
           fs.writeFile(currentPath + '/public/activities/test/activity' + activityNum + '.html', buildHtml(title, description, cloudinaryUpload, uploaderName), function (err) {
           if (err) throw err;
           //console.log('New File!'); 
           });
         });
 
-      /*var oldpath = files.filetoupload.path;
-      var cloudinaryUpload;
-      cloudinary.uploader.upload(oldpath, function(result, title) { 
-        cloudinaryUpload = result['url'] 
-        console.log(title);
-        });*/
-
-      /*var newpath = currentPath + '/public/activities/testFiles/' + files.filetoupload.name;
-      fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-        console.log('File uploaded and moved!');
-      });*/
     });
 
     //should notify the user of successful upload
@@ -231,7 +186,6 @@ module.exports.generateHtmlFile = function(req, res){
         activityNum = files.length - 6;
     });
     
-    //res.redirect('/activities/test/' + 'activity' + activityNum + '.html')
     req.flash('success_msg', 'Activity created');
     res.redirect('/')
 };
@@ -242,16 +196,18 @@ module.exports.generateHtmlFile = function(req, res){
 function generateSearchTable(searchResultsArray){
 
     if(searchResultsArray.length > 0){
-      var html = '<table class = "table table-striped table-bordered table-hover" style="width:80%; margin-left: 10%"><tbody>';
-      html += '<tr><th>Activity</th><th>User</td><th>Rating</th></tr>';
+      var html = '<div class="row">';
       var i;
-      console.log(searchResultsArray.length);
+      //console.log(searchResultsArray.length);
+      //console.log(searchResultsArray);
       for (i = 0; i < searchResultsArray.length; i++) {
-          html += '<tr><td><a href="/activities/test/' + searchResultsArray[i]['fileLink'] + '">' + searchResultsArray[i]['title'] + '</a></td><td>' + " test " + i + '</td><td>xxx</td></tr>';
+        if(i%4 == 0){
+          html += '</div><br><div class="row">'
+          //console.log("new row");
+        }
+        html += '<div class="col-sm-3"><div class="card" style = "width:80%; margin-right:10%; margin-left:10%"><img class="card-img-top" src="' + "http://res.cloudinary.com/dkyqddfoh/image/upload/v1525861227/wzio36zeshjuekmzn54t.jpg" + '" alt="Card image"><div class="card-body"><h4 class="card-title">' + searchResultsArray[i]['title'] + '</h4><p class="card-text">Author: ' + searchResultsArray[i]['user'] + '<br>Rating: 4.7</p><a href="' + '/activities/test/' + searchResultsArray[i]['fileLink'] + '" class="btn btn-primary">See Activity</a></div></div></div>';
       }
-
-      html += '</tbody></table>';
-      //console.log(html);
+      html += '</div>'
       return html}
 
     else{
