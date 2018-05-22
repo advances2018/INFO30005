@@ -11,11 +11,11 @@ router.get('/about', controller.aboutPage);
 
 router.get('/news', controller.newsPage);
 
-router.get('/Bye', controller.sayBye);
+/*router.get('/Bye', controller.sayBye);
 
 router.get('/db', controller.Alldb);
 
-router.get('/db/:index', controller.Indexdb);
+router.get('/db/:index', controller.Indexdb);*/
 
 router.get('/search', controller.searchPage);
 

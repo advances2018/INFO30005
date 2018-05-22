@@ -32,7 +32,7 @@
     </style>
 
 </head>
-<body>
+<body style = "Height: 100%">
 
 <!-- banner -->
 
@@ -52,12 +52,12 @@
 <!-- //banner --> 
 
 <% include ../partials/pageTemplate.ejs %>  
-                    <div class="banner-dott">
+                    <div class="banner-dott" style="Height: 100%">
                     <div class="clearfix"> </div>
                     <div class="searchResults">
 
                         <% if(user){ %>
-                            <center><h3>This is the placeholder Dashboard page for <%= userNameIn %></h3></center>
+                            <center><h3>This is the placeholder dashboard page for <%= userNameIn %></h3></center>
                                     <!--<h3>Username = <%= userNameIn %></h3>
                                     <h3>Name = <%= nameIn %></h3>
                                     <h3>Email = <%= emailIn %></h3>-->
@@ -98,6 +98,8 @@
                     </div>
                     <br>
                     </div>
+                    <br>
+                    <br>
                     <br>
                     </div>
 </body>

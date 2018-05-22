@@ -1,3 +1,5 @@
+//this is the file that handles the traffic and data from users
+
 const db = require('../models/db');
 var fs = require('fs');
 var http = require('http');
@@ -7,9 +9,9 @@ var multiparty = require('multiparty');
 var http = require('http');
 var util = require('util');
 
-module.exports.sayHi = function(req, res){
+/*module.exports.sayHi = function(req, res){
     res.send("Hi!");
-};
+};*/
 
 module.exports.indexPage = function(req, res){
     res.render('pages/index', { link: "moreInfo.html" });
@@ -36,13 +38,13 @@ module.exports.registerPage = function(req, res){
 };
 
 
-module.exports.sayBye = function(req, res){
+/*module.exports.sayBye = function(req, res){
     res.send("Bye!");
 };
 
 module.exports.Alldb = function(req, res){
     res.send(db);
-};
+};*/
 
 
 module.exports.Indexdb = function(req, res){
@@ -54,7 +56,7 @@ module.exports.Indexdb = function(req, res){
 //generate html files for upload start
 function buildHtml(title, description, fileselect, uploaderName) {
   var header = '';
-  var body = '<h1>Hello World! retest</h1>';
+  //var body = '<h1>Hello World! retest</h1>';
   var currentPath = process.cwd();
 
 
@@ -72,13 +74,16 @@ function buildHtml(title, description, fileselect, uploaderName) {
     return content4;
 };
 
+
+//connect to the database that holds the activities information
 var MongoClient = require('mongodb').MongoClient;
 
 var url = 'mongodb://swright3:info30005@ds117730.mlab.com:17730/info30005';
 
+/*
 var findDocuments = function(db, callback) {
     var collection = db.collection('info30005');
-
+    //search the table and return the results
     collection.find().toArray(function(err,docs){
         if (err) throw err;
         //console.log(docs);
@@ -86,7 +91,10 @@ var findDocuments = function(db, callback) {
     })
 
 }
+*/
 
+//add a new activity to the database
+//this is run when a user creates a new activity
 var insertDocuments = function(ins_title, ins_desc, htmlFileDet, uploaderName, cloudinaryUpload){
     MongoClient.connect(url, function(err, client){
         if (err) throw err;
@@ -114,6 +122,8 @@ var insertDocuments = function(ins_title, ins_desc, htmlFileDet, uploaderName, c
     })
 }
 
+//function for searching for activities that correspond to the search term from the user
+
 function searchDocuments(searchTerm, res){
   var results;
   var searchResults = "No results found"
@@ -122,7 +132,7 @@ function searchDocuments(searchTerm, res){
         var collection = client.db('info30005').collection('info30005');
         
         collection.find( { $text: { $search: searchTerm } }).toArray(function(err, results){
-            console.log(results);
+            //console.log(results);
             client.close();
             var searchResults = generateSearchTable(results);
             res.render('pages/search', { myVar : searchTerm , searchResults : searchResults});
@@ -132,6 +142,8 @@ function searchDocuments(searchTerm, res){
 }
 
 
+//this code handles generating the html file for new activities and handles
+//storing the uploaded image using an image hosting service called cloudinary
 module.exports.generateHtmlFile = function(req, res){
     var activityNum = "1" //need to get the activity num based on the number of activities in the db
     var currentPath = process.cwd();
@@ -139,10 +151,14 @@ module.exports.generateHtmlFile = function(req, res){
 
     const dir = currentPath + '/public/activities/test';
 
+
+    //check the current number of activities that exist
     fs.readdir(dir, (err, files) => {
         activityNum = files.length - 6;
     });
 
+
+    //read in the data from the upload form
     var form = new multiparty.Form();
 
     var title;
@@ -158,16 +174,17 @@ module.exports.generateHtmlFile = function(req, res){
       api_secret: '45ivSzjhmCguGDef9OqVfhOwqE8' 
       });
 
+      //code for handling the image upload
       var oldpath = files.filetoupload.path;
       cloudinary.uploader.upload(oldpath, function(result) { 
         cloudinaryUpload = result['url'] 
-        console.log(cloudinaryUpload)
+        //console.log(cloudinaryUpload)
         description = util.inspect(fields['description']).replace(/'/g, '');
-        console.log(description);
+        //console.log(description);
         title = util.inspect(fields['title']).replace(/'/g, '');
-        console.log(title);
+        //console.log(title);
         uploaderName = req.user['username'];
-        console.log(uploaderName);
+        //console.log(uploaderName);
         var htmlFileDet = 'activity' + activityNum + '.html';
         insertDocuments(title, description, htmlFileDet , uploaderName, cloudinaryUpload);
           fs.writeFile(currentPath + '/public/activities/test/activity' + activityNum + '.html', buildHtml(title, description, cloudinaryUpload, uploaderName), function (err) {
@@ -192,7 +209,7 @@ module.exports.generateHtmlFile = function(req, res){
 
 //generate html files for upload end
 
-//function for generating the html for the results table
+//function for generating the html for the results table based on search results
 function generateSearchTable(searchResultsArray){
 
     if(searchResultsArray.length > 0){
@@ -205,7 +222,13 @@ function generateSearchTable(searchResultsArray){
           html += '</div><br><div class="row">'
           //console.log("new row");
         }
-        html += '<div class="col-sm-3"><div class="card" style = "width:80%; margin-right:10%; margin-left:10%"><img class="card-img-top" src="' + "http://res.cloudinary.com/dkyqddfoh/image/upload/v1525861227/wzio36zeshjuekmzn54t.jpg" + '" alt="Card image"><div class="card-body"><h4 class="card-title">' + searchResultsArray[i]['title'] + '</h4><p class="card-text">Author: ' + searchResultsArray[i]['user'] + '<br>Rating: 4.7</p><a href="' + '/activities/test/' + searchResultsArray[i]['fileLink'] + '" class="btn btn-primary">See Activity</a></div></div></div>';
+        html += '<div class="col-sm-3"><div class="card" style = "width:80%; margin-right:10%; margin-left:10%"><img class="card-img-top" src="'
+        //+ "http://res.cloudinary.com/dkyqddfoh/image/upload/v1525861227/wzio36zeshjuekmzn54t.jpg"
+        + searchResultsArray[i]['imageLink']
+        + '" alt="Card image"><div class="card-body"><h4 class="card-title">'
+        + searchResultsArray[i]['title'] + '</h4><p class="card-text">Author: '
+        + searchResultsArray[i]['user'] + '<br>Rating: 4.7</p><a href="' + '/activities/test/'
+        + searchResultsArray[i]['fileLink'] + '" class="btn btn-primary">See Activity</a></div></div></div>';
       }
       html += '</div>'
       return html}
@@ -217,6 +240,7 @@ function generateSearchTable(searchResultsArray){
 
 }
 
+//code that handles all sections of generating the search results page
 module.exports.searchPage = function(req, res){
     var myVar = req.query.search; //search is the name of the input box
     var searchResults;
